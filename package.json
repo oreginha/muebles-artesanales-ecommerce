@@ -13,8 +13,16 @@
     "start:frontend": "cd frontend && npm start",
     "start:backend": "cd backend && npm start",
     "install:all": "npm install && cd frontend && npm install && cd ../backend && npm install",
-    "setup": "npm run install:all && npm run setup:env",
-    "setup:env": "node scripts/setup-env.js"
+    "setup": "node scripts/setup.js",
+    "setup:env": "node scripts/setup-env.js",
+    "deploy": "./scripts/deploy.sh all",
+    "deploy:frontend": "./scripts/deploy.sh frontend",
+    "deploy:backend": "./scripts/deploy.sh backend",
+    "backup": "./scripts/backup.sh",
+    "lint": "cd frontend && npm run lint && cd ../backend && npm run lint || true",
+    "test": "cd frontend && npm run test && cd ../backend && npm run test || true",
+    "clean": "rm -rf node_modules frontend/node_modules backend/node_modules frontend/.next backend/.tmp",
+    "reset": "npm run clean && npm run install:all"
   },
   "keywords": [
     "ecommerce",
