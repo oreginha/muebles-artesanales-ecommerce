@@ -1,0 +1,44 @@
+{
+  "collectionName": "components_order_items",
+  "info": {
+    "displayName": "Item",
+    "description": "Item de orden de compra"
+  },
+  "options": {},
+  "attributes": {
+    "product": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::product.product"
+    },
+    "productSnapshot": {
+      "type": "json",
+      "required": true
+    },
+    "quantity": {
+      "type": "integer",
+      "required": true,
+      "min": 1
+    },
+    "unitPrice": {
+      "type": "decimal",
+      "required": true,
+      "min": 0
+    },
+    "totalPrice": {
+      "type": "decimal",
+      "required": true,
+      "min": 0
+    },
+    "sku": {
+      "type": "string"
+    },
+    "productName": {
+      "type": "string",
+      "required": true
+    },
+    "productImage": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "collectionName": "components_order_customers",
+  "info": {
+    "displayName": "Customer",
+    "description": "Información del cliente"
+  },
+  "options": {},
+  "attributes": {
+    "email": {
+      "type": "email",
+      "required": true
+    },
+    "firstName": {
+      "type": "string",
+      "required": true,
+      "minLength": 2,
+      "maxLength": 50
+    },
+    "lastName": {
+      "type": "string",
+      "required": true,
+      "minLength": 2,
+      "maxLength": 50
+    },
+    "phone": {
+      "type": "string",
+      "required": true
+    },
+    "documentType": {
+      "type": "enumeration",
+      "enum": ["dni", "cuit", "cuil", "passport"],
+      "default": "dni"
+    },
+    "documentNumber": {
+      "type": "string"
+    },
+    "address": {
+      "type": "component",
+      "component": "shared.address",
+      "required": true
+    }
+  }
+}

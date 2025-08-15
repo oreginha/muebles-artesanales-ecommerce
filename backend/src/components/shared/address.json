@@ -1,0 +1,54 @@
+{
+  "collectionName": "components_shared_addresses",
+  "info": {
+    "displayName": "Address",
+    "description": "Dirección postal"
+  },
+  "options": {},
+  "attributes": {
+    "street": {
+      "type": "string",
+      "required": true,
+      "minLength": 5,
+      "maxLength": 200
+    },
+    "streetNumber": {
+      "type": "string"
+    },
+    "apartment": {
+      "type": "string"
+    },
+    "city": {
+      "type": "string",
+      "required": true,
+      "minLength": 2,
+      "maxLength": 100
+    },
+    "state": {
+      "type": "string",
+      "required": true,
+      "minLength": 2,
+      "maxLength": 100
+    },
+    "zipCode": {
+      "type": "string",
+      "required": true,
+      "minLength": 4,
+      "maxLength": 10
+    },
+    "country": {
+      "type": "string",
+      "required": true,
+      "default": "Argentina"
+    },
+    "latitude": {
+      "type": "decimal"
+    },
+    "longitude": {
+      "type": "decimal"
+    },
+    "instructions": {
+      "type": "text"
+    }
+  }
+}

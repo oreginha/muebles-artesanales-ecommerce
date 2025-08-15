@@ -1,0 +1,137 @@
+{
+  "kind": "collectionType",
+  "collectionName": "orders",
+  "info": {
+    "singularName": "order",
+    "pluralName": "orders",
+    "displayName": "Order",
+    "description": "Órdenes de compra del e-commerce"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "orderNumber": {
+      "type": "string",
+      "unique": true,
+      "required": true
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "pending",
+        "confirmed",
+        "paid",
+        "processing",
+        "shipped",
+        "delivered",
+        "cancelled",
+        "refunded"
+      ],
+      "default": "pending"
+    },
+    "total": {
+      "type": "decimal",
+      "required": true,
+      "min": 0
+    },
+    "subtotal": {
+      "type": "decimal",
+      "required": true,
+      "min": 0
+    },
+    "taxAmount": {
+      "type": "decimal",
+      "default": 0,
+      "min": 0
+    },
+    "shippingCost": {
+      "type": "decimal",
+      "default": 0,
+      "min": 0
+    },
+    "discountAmount": {
+      "type": "decimal",
+      "default": 0,
+      "min": 0
+    },
+    "currency": {
+      "type": "string",
+      "default": "ARS",
+      "required": true
+    },
+    "paymentMethod": {
+      "type": "enumeration",
+      "enum": ["mercadopago", "bank_transfer", "cash", "crypto"],
+      "default": "mercadopago"
+    },
+    "paymentStatus": {
+      "type": "enumeration",
+      "enum": ["pending", "paid", "failed", "refunded", "cancelled"],
+      "default": "pending"
+    },
+    "mercadopagoId": {
+      "type": "string"
+    },
+    "mercadopagoPreferenceId": {
+      "type": "string"
+    },
+    "paymentUrl": {
+      "type": "text"
+    },
+    "paidAt": {
+      "type": "datetime"
+    },
+    "items": {
+      "type": "component",
+      "repeatable": true,
+      "component": "order.item",
+      "required": true
+    },
+    "customer": {
+      "type": "component",
+      "component": "order.customer",
+      "required": true
+    },
+    "shipping": {
+      "type": "component",
+      "component": "order.shipping"
+    },
+    "billing": {
+      "type": "component",
+      "component": "order.billing"
+    },
+    "notes": {
+      "type": "text"
+    },
+    "adminNotes": {
+      "type": "text"
+    },
+    "trackingNumber": {
+      "type": "string"
+    },
+    "shippedAt": {
+      "type": "datetime"
+    },
+    "deliveredAt": {
+      "type": "datetime"
+    },
+    "cancelledAt": {
+      "type": "datetime"
+    },
+    "cancellationReason": {
+      "type": "text"
+    },
+    "refundAmount": {
+      "type": "decimal",
+      "min": 0
+    },
+    "refundedAt": {
+      "type": "datetime"
+    },
+    "refundReason": {
+      "type": "text"
+    }
+  }
+}

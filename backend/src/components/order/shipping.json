@@ -1,0 +1,39 @@
+{
+  "collectionName": "components_order_shipping",
+  "info": {
+    "displayName": "Shipping",
+    "description": "Información de envío"
+  },
+  "options": {},
+  "attributes": {
+    "method": {
+      "type": "enumeration",
+      "enum": ["pickup", "delivery", "express", "standard"],
+      "default": "standard"
+    },
+    "cost": {
+      "type": "decimal",
+      "default": 0,
+      "min": 0
+    },
+    "carrier": {
+      "type": "string"
+    },
+    "trackingNumber": {
+      "type": "string"
+    },
+    "trackingUrl": {
+      "type": "string"
+    },
+    "estimatedDelivery": {
+      "type": "datetime"
+    },
+    "address": {
+      "type": "component",
+      "component": "shared.address"
+    },
+    "instructions": {
+      "type": "text"
+    }
+  }
+}

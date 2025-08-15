@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_order_billing",
+  "info": {
+    "displayName": "Billing",
+    "description": "Información de facturación"
+  },
+  "options": {},
+  "attributes": {
+    "sameAsShipping": {
+      "type": "boolean",
+      "default": true
+    },
+    "address": {
+      "type": "component",
+      "component": "shared.address"
+    },
+    "taxId": {
+      "type": "string"
+    },
+    "companyName": {
+      "type": "string"
+    },
+    "invoiceType": {
+      "type": "enumeration",
+      "enum": ["receipt", "invoice_a", "invoice_b", "invoice_c"],
+      "default": "receipt"
+    }
+  }
+}
